@@ -18,12 +18,8 @@ export default {
     methods: {
         addTodo: function() {
             if(this.newTodoItem !== ''){
-             var obj = {complete: false, item: this.newTodoItem};
-            console.log(this.newTodoItem);
-            //저장하는 로직
-            //localStorage.setItem(this.newTodoItem, obj);//API 1가지 오브젝트로 떨어져서 어떤값인지 모름
-            localStorage.setItem(this.newTodoItem, JSON.stringify(obj));//API 1가지
-
+              // this.$emit('이벤트 이름',인자1, 인자2,...);
+            this.$emit('addTodoItem', this.newTodoItem);
             this.clearInput(); 
             }
         },
