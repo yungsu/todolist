@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     addOneItem: function(todoItem){
-            var obj = {complete: false, item: todoItem};
+            const obj = {complete: false, item: todoItem};
             console.log(todoItem);
             //저장하는 로직
             //localStorage.setItem(this.newTodoItem, obj);//API 1가지 오브젝트로 떨어져서 어떤값인지 모름
@@ -46,7 +46,7 @@ export default {
   },
   created: function(){ //ready 같은의미
     if (localStorage.length > 0){
-      for(var i =0; i < localStorage.length; i ++){
+      for(let i =0; i < localStorage.length; i ++){
         if(localStorage.key(i) !== 'loglevel:webpack-dev-server'){
           console.log(JSON.parse(localStorage.getItem(localStorage.key(i))));
           this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
